@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid Layout</title>
+    <style>
+        body {
+            display: grid;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0;
+            grid-template-columns: 1fr 300px;
+            font-size: 40px;
+            font-family: sans-serif;
+            grid-template-rows: 300px 50px 1fr 50px;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "main aside"
+                "stopka stopka";
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            grid-area: header;
+            background-color: olivedrab;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #45e;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #6ae;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: #c77;
+        }
+
+        footer {
+            grid-area: stopka;
+            background-color: #6aa;
+        }
+
+        @media(max-width: 1024px) {
+            body {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 50px 300px 2fr 1fr 50px;
+                grid-template-areas:
+                    "header "
+                    "nav"
+                    "main"
+                    "aside"
+                    "stopka";
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <nav>Nav</nav>
+    <main>Main</main>
+    <aside>Aside</aside>
+    <footer>Stopka</footer>
+</body>
+
+</html>
